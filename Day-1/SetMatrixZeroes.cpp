@@ -35,23 +35,27 @@ void setZeros(vector<vector<int> > &matrix)
 int main()
 {
     // ONLINE_JUDGE
-    #ifndef ONLINE_JUDGE
-        freopen("input.txt", "r", stdin);
+    // #ifndef ONLINE_JUDGE
+    //     freopen("input.txt", "r", stdin);
 
-        freopen("output.txt", "w", stdout);
-    #endif
+    //     freopen("output.txt", "w", stdout);
+    // #endif
 
-    vector<vector<int> > arr;
     int n, m;
     cin >> n >> m;
 
-    for (int i = 0; i < n; i++)
-    {
-        for (int j = 0; j < m; j++)
-        {
-            cin >> arr[i][j];
+    vector<vector<int> > arr;
+    for(int i = 0; i < n; i++){
+        vector<int> temp;
+        for(int j = 0; j < m; j++){
+            int val;
+            cin >> val;
+            temp.push_back(val);
         }
+        arr.push_back(temp);
+        temp.clear();
     }
+
 
     setZeros(arr);
     cout << "The Final Matrix is " << endl;
